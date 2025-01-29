@@ -285,3 +285,11 @@ pnpm run load-test
 ### **Logger (Winston)**
 
 Se utiliza **Winston** para registrar todos los logs de la aplicación, incluidas las solicitudes HTTP, errores y eventos importantes. Los logs son almacenados en la carpeta `logs/combined.log`, y puedes configurarlos para que se registren en diferentes niveles como `info`, `warn`, `error`.
+
+### **Diagrama arquitectura**
+![Drawing 2025-01-29 07 06 18 excalidraw](https://github.com/user-attachments/assets/a19b459c-664d-4dbc-9228-a87546946892)
+
+### **Diagrama base de datos**
+![image](https://github.com/user-attachments/assets/7766e989-6d1a-42cc-9bfb-191dd46bf545)
+
+
