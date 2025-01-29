@@ -1,5 +1,5 @@
 config:
-  target: "http://localhost:3000" # URL base de tu API
+  target: "http://localhost:3000" 
   phases:
     - duration: 60
       arrivalRate: 1 

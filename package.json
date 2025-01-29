@@ -10,14 +10,13 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "load-test": "artillery run tests/load/load-test.yml",
     "create-base-data-build": "npm run tsc && node dist/createBaseData.js",
     "load-test-all": "pnpm run load-test-alert-inventory && pnpm run load-test-all-inventory && pnpm run load-test-all-products && pnpm run load-test-put-products && pnpm run load-test-single-product",
-    "load-test-alert-inventory": "artillery run tests/Inventory/load-test-alert-inventory.yml --output logs/load-test-alert-inventory.json",
-    "load-test-all-inventory": "artillery run tests/Inventory/load-test-all-inventory.yml --output logs/load-test-all-inventory.json",
-    "load-test-all-products": "artillery run tests/Product/load-test-all-products.yml --output logs/load-test-all-products.json",
-    "load-test-put-products": "artillery run tests/Product/load-test-put-products.yml --output logs/load-test-put-products.json",
-    "load-test-single-product": "artillery run tests/Product/load-test-single-product.yml --output logs/load-test-single-product.json"
+    "load-test-alert-inventory": "artillery run tests/inventory/load-test-alert-inventory.yml --output logs/load-test-alert-inventory.json",
+    "load-test-all-inventory": "artillery run tests/inventory/load-test-all-inventory.yml --output logs/load-test-all-inventory.json",
+    "load-test-all-products": "artillery run tests/product/load-test-all-products.yml --output logs/load-test-all-products.json",
+    "load-test-put-products": "artillery run tests/product/load-test-put-products.yml --output logs/load-test-put-products.json",
+    "load-test-single-product": "artillery run tests/product/load-test-single-product.yml --output logs/load-test-single-product.json"
   },
   "keywords": [],
   "author": "",
@@ -45,7 +44,9 @@
     "jest": "^29.7.0",
     "nodemon": "^3.1.9",
     "ts-jest": "^29.2.5",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "artillery": "^2.0.22"
+
   },
   "prisma": {
     "schema": "prisma/schema.prisma"
