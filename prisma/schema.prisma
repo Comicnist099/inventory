@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum MovementType {
+  IN
+  OUT
+  TRANSFER
+}
+
+model Inventory {
+  id        String   @id @default(uuid())
+  minStock  Int
+  productId String   
+  quantity  Int
+  storeId   String
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  product Product @relation(fields: [productId], references: [id])
+  store   Store   @relation(fields: [storeId], references: [id])
+
+  @@index([productId]) 
+  @@index([storeId]) 
+}
+
+model Movement {
+  id            String       @id @default(uuid())
+  productId     String
+  quantity      Int
+  sourceStoreId String
+  targetStoreId String
+  type          MovementType
+  active        Boolean      @default(true)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  product     Product @relation(fields: [productId], references: [id])
+  sourceStore Store   @relation("SourceStore", fields: [sourceStoreId], references: [id])
+  targetStore Store   @relation("TargetStore", fields: [targetStoreId], references: [id])
+
+  @@index([productId]) 
+  @@index([sourceStoreId, targetStoreId]) 
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  category    String
+  description String
+  name        String
+  price       Decimal
+  sku         String   @unique
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  inventory Inventory[]
+  movements Movement[]
+
+  @@index([category]) 
+  @@index([price]) 
+  @@index([category, price])
+}
+
+model Store {
+  id        String   @id @default(uuid())
+  name      String
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  inventory Inventory[]
+
+  sourceMovements Movement[] @relation("SourceStore")
+  targetMovements Movement[] @relation("TargetStore")
+}

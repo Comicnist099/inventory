@@ -1,0 +1,18 @@
+
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 1
+
+scenarios:
+  - name: "Actualizar un producto específico"
+    flow:
+      - put:
+          url: "/api/product/01-Product-Testing"
+          json:
+            name: "Test Product Updated"
+            overview: "Updated overview for test product"
+            price: 29.99
+            category: "Updated Category"
+            sku: "updated-sku-123"

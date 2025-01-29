@@ -1,0 +1,11 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 1
+
+scenarios:
+  - name: "Obtener un producto específico"
+    flow:
+      - get:
+          url: "/api/products/01-Product-Testing"

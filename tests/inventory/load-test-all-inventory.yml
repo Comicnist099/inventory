@@ -1,0 +1,11 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 1
+
+scenarios:
+  - name: "Obtener los inventarios con stock bajo"
+    flow:
+      - get:
+          url: "/api/store/01-Store-Testing/inventory?page=1&pageSize=10"

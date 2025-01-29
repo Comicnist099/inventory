@@ -1,0 +1,12 @@
+config:
+  target: "http://localhost:3000" # URL base de tu API
+  phases:
+    - duration: 60
+      arrivalRate: 1 
+
+scenarios:
+  - name: "Obtener todos los productos"
+    flow:
+      - get:
+          url: "/api/products?page=1&pageSize=10&category=Test Category&minPrice=0&maxPrice=10000" # Endpoint para obtener todos los productos
+
