@@ -1,7 +1,6 @@
 import { Prisma } from "@prisma/client";
 import Joi, { ValidationError } from "joi";
 
-// Clase para manejar los diferentes tipos de errores
 export class ErrorHandler {
   static handlePrismaError(error: unknown): string {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
@@ -21,7 +20,7 @@ export class ErrorHandler {
     }
 
     if (error instanceof Error) {
-      return error.message; // Error genérico
+      return error.message;
     }
 
     return "Ha ocurrido un error desconocido.";
@@ -33,7 +32,6 @@ export class ErrorHandler {
         .join(", ")}`;
     }
 
-    // Si es un error genérico
     if (error instanceof Error && error.name === "ValidationError") {
       return `Error de validación: ${error.message}`;
     }

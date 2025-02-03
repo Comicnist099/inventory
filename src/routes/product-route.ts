@@ -1,4 +1,3 @@
-// Ruta para crear un pr
 import express from "express";
 import type { ProductController } from "../modules/product/controllers/ProductController";
 import { apiVersionMiddleware } from "../shared/middleware/apiVersionMiddleware";

@@ -15,7 +15,7 @@ export const swaggerDocument: SwaggerOptions = {
   },
   servers: [
     {
-      url: "http://localhost:3000/api/",
+      url: process.env.SWAGGER_API_URL || "http://localhost:3000/api/", // Valor por defecto si no está definida
     },
   ],
   paths: {

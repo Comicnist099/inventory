@@ -14,14 +14,13 @@ export class StoreValidator {
 
     if (error) {
       const detailedErrors = error.details.map((d) => ({
-        field: d.context?.key, // El campo que falló
-        message: d.message, // El mensaje de error
-        type: d.type, // El tipo de error (e.g., "string.empty")
-        path: Array.isArray(d.path) ? d.path : [d.path], // Asegurarse de que path sea un array
+        field: d.context?.key, 
+        message: d.message, 
+        type: d.type, 
+        path: Array.isArray(d.path) ? d.path : [d.path], 
       }));
 
-      // Lanzar un error de validación con la lista detallada
-      throw new ValidationError(detailedErrors); // Asegurándonos de que estamos pasando los errores detallados
+      throw new ValidationError(detailedErrors); 
     }
 
     return value;
