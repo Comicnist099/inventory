@@ -1,10 +1,4 @@
 # Documentación de la API: Inventory-System
-
-## ⬛Descripción del Proyecto
-
-**Inventory-System** es un sistema para gestionar inventarios de productos, movimientos de inventarios entre diferentes tiendas y registrar las operaciones de cada producto. Está diseñado para ser escalable, modular y fácil de integrar con otros sistemas y bases de datos.
-
----
 # Índice de Documentación
 
 1. [Descripción del Proyecto](#-descripción-del-proyecto)
@@ -27,6 +21,13 @@
    4. [Ejecutar testing (Jest y Supertest)](#ejecutar-testing-jest-y-supertest)
    5. [Ejecutar tests de carga (Artillery)](#ejecutar-tests-de-carga-artillery)
 10. [Validaciones y Tipado](#validaciones-y-tipado)
+
+## ⬛Descripción del Proyecto
+
+**Inventory-System** es un sistema para gestionar inventarios de productos, movimientos de inventarios entre diferentes tiendas y registrar las operaciones de cada producto. Está diseñado para ser escalable, modular y fácil de integrar con otros sistemas y bases de datos.
+
+---
+
     
 # Decisiones Técnicas
 ## ⬛Tecnologías Utilizadas
