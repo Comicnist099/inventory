@@ -1,7 +1,7 @@
 # Documentación de la API: Inventory-System
 # Índice de Documentación
 
-1. [Descripción del Proyecto](#-descripción-del-proyecto)
+1. [Descripción del Proyecto](#descripción-del-proyecto)
 2. [Decisiones Técnicas](#decisiones-técnicas)
    1. [Tecnologías Utilizadas](#tecnologías-utilizadas)
    2. [Diagrama Arquitectura](#diagrama-arquitectura)
