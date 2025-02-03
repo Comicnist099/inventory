@@ -169,7 +169,7 @@ En este caso, dado que se utilizaran herramientas **Node.js, Prisma ORM y TypeSc
 *  Ejecutar pruebas de carga en un servicio separado sin afectar otros contenedores.
 
 ---
-## ⬛ Jest y Supertest
+## ⬛Jest y Supertest
 **Jest** y **Supertest** son herramientas esenciales para garantizar la calidad y estabilidad del código. 
 ### 🔹 1. **¿Qué es Jest?**
 **Jest** es un **framework de pruebas para JavaScript y TypeScript** que permite ejecutar pruebas unitarias, de integración y de cobertura de código.
@@ -262,7 +262,7 @@ scenarios:
 - `phases`: Define la duración y la cantidad de solicitudes por segundo.
 - `flow`: Describe el escenario de prueba, en este caso, un **POST** a `/api/product`.
 - `expect`: Verifica que la API devuelva un **status 201**.
-## ⬛ Winston
+## ⬛Winston
 
 En tu proyecto, **Winston** es la herramienta utilizada para gestionar el **logging** de la aplicación, permitiendo registrar solicitudes HTTP, errores y eventos importantes.
 ### 🔹 **1. ¿Qué es Winston?**
@@ -275,7 +275,7 @@ Winston es una **librería de logging para Node.js** que permite almacenar logs 
 *  Permite **almacenar logs en archivos**, consola o bases de datos.  
 *  **Formato personalizable** en JSON, texto plano o colores.  
 *  Compatible con **Express**, **NestJS** y otras arquitecturas.
-## ⬛ Swagger
+## ⬛Swagger
 
 **Swagger** es una herramienta que se utiliza para generar **documentación interactiva** de una API, facilitando su comprensión y uso por otros desarrolladores. A través de **Swagger**, puedes describir los endpoints de tu API, los tipos de datos que reciben y devuelven, y los posibles códigos de estado, entre otros aspectos. Esto se logra utilizando un archivo de configuración, generalmente en **JSON** o **YAML**, que describe la estructura y las características de la API.
 
