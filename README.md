@@ -285,7 +285,7 @@ cd inventory
 code .
 ```
 4. En en el archivo raíz configura la base de datos creando un archivo `.env`, toma en cuenta el `.env.example` para poder saber las variables necesarias, las variables `POSTGRES_USER`, `POSTGRES_PASSWORD`,`POSTGRES_DB` son de libre elección estas están vinculadas al `docker-compose.yml` lo cual te permitirá crear un entorno automáticamente, no olvidar remplazar los atributos en la variable `DATABASE_URL`:  
-```json
+```ts
 #Crear usuario y contraseña de la base de datos
 POSTGRES_USER=
 POSTGRES_PASSWORD=
