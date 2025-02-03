@@ -17,20 +17,27 @@ describe("inventory API", () => {
     it("should create a new inventory", async () => {
       const inventoryData = {
         minStock: 12,
-        productId: "e6f95dd1-0446-4c1a-9bff-d9f722186cfc",
+        productId: "01-Product-Testing",
         quantity: 200,
-        storeId: "6d332009-9043-4ab3-a80b-dc41777c4844",
+        storeId: "01-Store-Testing",
       };
       const mockResponse = {
         id: "3d49c57a-308e-458d-a775-1ba43c271fc8",
         minStock: 12,
-        productId: "e6f95dd1-0446-4c1a-9bff-d9f722186cfc",
+        productId: "01-Product-Testing",
         quantity: 200,
-        storeId: "6d332009-9043-4ab3-a80b-dc41777c4844",
+        storeId: "01-Store-Testing",
         active: true,
         createdAt: new Date(),
         updatedAt: new Date(),
       };
+      prismaMock.store.findUnique.mockResolvedValue({
+        id: "01-Store-Testing",
+        name: "Test Store",
+        active:true,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
 
       prismaMock.inventory.create.mockResolvedValue(mockResponse);
       const res = await request(app).post("/api/inventory").send(inventoryData);
