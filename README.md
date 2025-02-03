@@ -5,6 +5,29 @@
 **Inventory-System** es un sistema para gestionar inventarios de productos, movimientos de inventarios entre diferentes tiendas y registrar las operaciones de cada producto. Está diseñado para ser escalable, modular y fácil de integrar con otros sistemas y bases de datos.
 
 ---
+# Índice de Documentación
+
+1. [Descripción del Proyecto](#-descripción-del-proyecto)
+2. [Decisiones Técnicas](#decisiones-técnicas)
+   1. [Tecnologías Utilizadas](#tecnologías-utilizadas)
+   2. [Diagrama Arquitectura](#diagrama-arquitectura)
+   3. [Diagrama Base de Datos](#diagrama-base-de-datos)
+   4. [Estructura de Trabajo](#estructura-de-trabajo)
+   5. [¿Por qué?](#por-qué)
+3. [Prisma ORM](#prisma-orm)
+4. [Docker](#docker)
+5. [Jest y Supertest](#jest-y-supertest)
+6. [Artillery](#artillery)
+7. [Winston](#winston)
+8. [Swagger](#swagger)
+9. [Ejecutar aplicación usando Docker](#ejecutar-aplicación-usando-docker)
+   1. [Requisitos Previos](#requisitos-previos)
+   2. [Ejecución](#ejecución)
+   3. [Extra](#extra)
+   4. [Ejecutar testing (Jest y Supertest)](#ejecutar-testing-jest-y-supertest)
+   5. [Ejecutar tests de carga (Artillery)](#ejecutar-tests-de-carga-artillery)
+10. [Validaciones y Tipado](#validaciones-y-tipado)
+    
 # Decisiones Técnicas
 ## ⬛Tecnologías Utilizadas
 
