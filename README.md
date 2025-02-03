@@ -20,7 +20,6 @@
    3. [Extra](#extra)
    4. [Ejecutar testing (Jest y Supertest)](#ejecutar-testing-jest-y-supertest)
    5. [Ejecutar tests de carga (Artillery)](#ejecutar-tests-de-carga-artillery)
-10. [Validaciones y Tipado](#validaciones-y-tipado)
 
 ## ⬛Descripción del Proyecto
 
