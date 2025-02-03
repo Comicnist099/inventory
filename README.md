@@ -21,8 +21,10 @@
 | **Winston**     | Librería para el registro de logs de la aplicación.                   |
 | **Express.js**  | Framework web para manejar solicitudes HTTP.                          |
 ## ⬛Diagrama arquitectura
+![image](https://github.com/user-attachments/assets/9a8e4ab6-2e77-4330-9000-ee9a2439fcc0)
 
 ## ⬛Diagrama base de datos
+![image](https://github.com/user-attachments/assets/a8b2456c-68c5-4bdb-a3c5-aae780008d18)
 
 ## ⬛Estructura de trabajo
 ### **🔹Clean Architecture** con influencia de **arquitectura hexagonal**
