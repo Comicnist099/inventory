@@ -363,7 +363,7 @@ http://localhost:3000/api-docs
 ```bash
  docker-compose exec test pnpm run test:coverage
 ```
-3. Esto genera una carpeta `./coverage` en la raíz del sistema, que permite acceder los resultados del testing, gracias al atributo `roots: ["src/modules/"]` del objeto ubicado en el archivo `jest.config.ts`, este puede acceder a todos los módulos y encontrar todos los archivos test.
+3. Esto genera una carpeta `./coverage` en la raíz del sistema, que permite acceder los resultados del testing solo es cosa de entrar a la carpeta he ir a la ubicación `lcov-report/index.html` , gracias al atributo `roots: ["src/modules/"]` del objeto ubicado en el archivo `jest.config.ts`, este puede acceder a todos los módulos y encontrar todos los archivos test.
 ```ts
 import type { Config } from "jest";
 
@@ -391,7 +391,7 @@ export default config;
  docker-compose exec test pnpm run load-test-all
 ```
 2. Esto permite hacer un test de carga donde los registros se guardaran en la carpeta raíz `./logs`
-3. La composición de cada test de carga esta divido por petición por ejemplo `load-test-all-products.yml` si se requieren 500 peticiones es necesario cambiar el atributo
+3. La composición de cada test de carga esta divido por petición por ejemplo `load-test-all-products.yml` si se requieren 500 peticiones es necesario cambiar el atributo, todo esto esta localizado en la carpeta raiz `./test`
    `arrivalRate:1` a `arrivalRate:500`
 ```yml
 # load-test-all-products.yml
