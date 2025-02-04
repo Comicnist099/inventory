@@ -451,9 +451,6 @@ cat ./backups/snapshot_YYYY-MM-DD.sql | docker exec -i inventorysystem-db psql -
     - **`-U ${POSTGRES_USER}`**: Utiliza el usuario de PostgreSQL definido en la variable de entorno `${POSTGRES_USER}`.
     - **`-d ${POSTGRES_DB}`**: Especifica la base de datos de destino donde restaurar los datos.
 - **`-i`**: Se utiliza para habilitar la entrada interactiva para que los datos del archivo SQL se pasen correctamente al contenedor.
-
-1. Guardar de manera manual la base de datos:
-```bash
 ## ⬛Despliegue con Digital Ocean
 
 1. Ejecutar la ruta del proyecto colocar el siguiente comando en la terminal:
@@ -520,7 +517,5 @@ docker run -p 80:3000 registry.digitalocean.com/inventory-app/inventory-app:1.0.
 4. En el campo `Tag` asignar el tag colocado.
 5. Llenar los siguientes campos según lo necesario.
 6. Esperamos unos minutos y la aplicación ya esta desplegada.
-docker compose up -d db
-```
 
 
