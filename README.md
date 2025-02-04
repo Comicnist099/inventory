@@ -21,6 +21,7 @@
    4. [Ejecutar testing (Jest y Supertest)](#ejecutar-testing-jest-y-supertest)
    5. [Ejecutar tests de carga (Artillery)](#ejecutar-tests-de-carga-artillery)
 10. [Backups](#Backups)
+11. [Despliegue con Digital Ocean](#Despliegue-con-Digital-Ocean)
 
 ## ⬛Descripción del Proyecto
 
@@ -453,6 +454,72 @@ cat ./backups/snapshot_YYYY-MM-DD.sql | docker exec -i inventorysystem-db psql -
 
 1. Guardar de manera manual la base de datos:
 ```bash
+## ⬛Despliegue con Digital Ocean
+
+1. Ejecutar la ruta del proyecto colocar el siguiente comando en la terminal:
+```bash
+docker build -t inventory-app:1.0.0 .
+```
+2. Una vez realizado esto se necesita ir a la pagina de Digital Ocean e ir al apartado `MANAGE-> Container Registry`.
+3. Se da click al botón crea un contenedor y se coloca los parámetros más más eficientes para su despliegue.
+4. Una vez dado de alta el contenedor bajar en el slider y dar click al botón API para poder hacer generar un nuevo token y seguidamente se le da un nombre y se le agrega los permisos correspondientes.
+5. La finalización del paso anterior provocará el obtener un token, es necesario copiarlo y pegarlo en un lugar seguro ya que una vez salir de la pagina este ya no volverá ser accesible.
+6. Instalar Digital Ocean en el dispositivo, si tu dispositivo es windows seguir las siguientes instrucciones si no lo es consultar el [How to Install and Configure doctl | DigitalOcean Documentation](https://docs.digitalocean.com/reference/doctl/how-to/install/#:~:text=How%20to%20Install%20and%20Configure%20doctl%201%20Step,Step%205%3A%20Install%20Serverless%20Functions%20support%20%28Optional%29%20):
+```bash
+Invoke-WebRequest https://github.com/digitalocean/doctl/releases/download/v1.120.1/doctl-1.120.1-windows-amd64.zip -OutFile ~\doctl-1.120.1-windows-amd64.zip
+```
+7. Con el siguiente comando poder ejecutarlo:
+```bash
+Expand-Archive -Path ~\doctl-1.120.1-windows-amd64.zip
+
+```
+8. Abre `powershell`  como administrador para poder ejecutar el siguiente comando:
+```powershell
+New-Item -ItemType Directory $env:ProgramFiles\doctl\
+Move-Item -Path ~\doctl-1.120.1-windows-amd64\doctl.exe -Destination $env:ProgramFiles\doctl\
+[Environment]::SetEnvironmentVariable(
+    "Path",
+    [Environment]::GetEnvironmentVariable("Path",
+    [EnvironmentVariableTarget]::Machine) + ";$env:ProgramFiles\doctl\",
+    [EnvironmentVariableTarget]::Machine)
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
+```
+9. Ejecuta en la terminal para verificar la instalación correcta
+```bash
+doctl --version
+```
+10. Inicia sesión con tu token con el siguiente comando:
+```bash
+doctl auth init -t <Token>
+```
+11. Ahora es necesario autenticarnos a nuestro registro para ello es necesario:
+```bash
+doctl registry login
+```
+12. Copia el nombre del contenedor ejemplo:
+```text
+registry.digitalocean.com/inventory-app
+```
+13. Ejecutar 
+```bash
+docker tag inventory-app:1.0.0 registry.digitalocean.com/inventory-app/inventory-app:1.0.0
+```
+14. El siguiente comando se sube el docker a digital ocean
+```bash
+docker push registry.digitalocean.com/inventory-app/inventory-app:1.0.0 
+```
+
+15. Si se quiere ejecutar localmente el entorno subido directamente de digital ocean ejecutar el siguiente comando:
+```bash
+docker run -p 80:3000 registry.digitalocean.com/inventory-app/inventory-app:1.0.0 
+```
+
+1. Regresa a la pagina de digital ocean y ubicate en el sidebar haciendo click a `apps` 
+2. En el campo `Source provider` seleccionar `DigitalOcean Container Register`
+3. En el campo `Repository` asignar el repositorio dado de alta.
+4. En el campo `Tag` asignar el tag colocado.
+5. Llenar los siguientes campos según lo necesario.
+6. Esperamos unos minutos y la aplicación ya esta desplegada.
 docker compose up -d db
 ```
 
