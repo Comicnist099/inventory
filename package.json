@@ -10,7 +10,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "create-base-data-build": "npm run tsc && node dist/createBaseData.js",
+    "create-base-data-build": "npm run tsc && node dist/src/createBaseData.js",
     "load-test-all": "pnpm run load-test-alert-inventory && pnpm run load-test-all-inventory && pnpm run load-test-all-products && pnpm run load-test-put-products && pnpm run load-test-single-product",
     "load-test-alert-inventory": "artillery run tests/inventory/load-test-alert-inventory.yml --output logs/load-test-alert-inventory.json",
     "load-test-all-inventory": "artillery run tests/inventory/load-test-all-inventory.yml --output logs/load-test-all-inventory.json",
