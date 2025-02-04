@@ -497,7 +497,7 @@ doctl registry login
 ```text
 registry.digitalocean.com/inventory-app
 ```
-13. Ejecutar 
+13. Cambiar el nombre de la imagen a otro nombre
 ```bash
 docker tag inventory-app:1.0.0 registry.digitalocean.com/inventory-app/inventory-app:1.0.0
 ```
