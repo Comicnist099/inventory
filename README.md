@@ -450,3 +450,10 @@ cat ./backups/snapshot_YYYY-MM-DD.sql | docker exec -i inventorysystem-db psql -
     - **`-U ${POSTGRES_USER}`**: Utiliza el usuario de PostgreSQL definido en la variable de entorno `${POSTGRES_USER}`.
     - **`-d ${POSTGRES_DB}`**: Especifica la base de datos de destino donde restaurar los datos.
 - **`-i`**: Se utiliza para habilitar la entrada interactiva para que los datos del archivo SQL se pasen correctamente al contenedor.
+
+1. Guardar de manera manual la base de datos:
+```bash
+docker compose up -d db
+```
+
+
