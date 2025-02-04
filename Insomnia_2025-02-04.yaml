@@ -1,0 +1,358 @@
+_type: export
+__export_format: 4
+__export_date: 2025-02-04T19:13:20.062Z
+__export_source: insomnia.desktop.app:v10.3.0
+resources:
+  - _id: req_60cb4b69de0546e7b487539cb83a67b5
+    parentId: fld_9b6d4abe98c544bfbdb19c1da36fe086
+    modified: 1738663011558
+    created: 1737604818693
+    url: "{{ _.url }}/store"
+    name: create-store
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name":"Soriana"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.3.0
+    authentication: {}
+    metaSortKey: -1738663011511
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_9b6d4abe98c544bfbdb19c1da36fe086
+    parentId: wrk_87fc0adf23054e548916e9a0fc78656a
+    modified: 1738663009593
+    created: 1738663009593
+    name: Store
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1738663009593
+    environmentType: kv
+    _type: request_group
+  - _id: wrk_87fc0adf23054e548916e9a0fc78656a
+    parentId: null
+    modified: 1737539353300
+    created: 1737539353300
+    name: InventoryCollection
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_3d2b294c5a694387a39c3310e740e29e
+    parentId: fld_69e9764efd9741989fb73f6886c4c067
+    modified: 1738662923323
+    created: 1737643967551
+    url: "{{ _.url }}/inventory/transfer"
+    name: transfer-movement
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"productId":"2568a902-b09c-44df-98f1-a2dc48d8a54d",
+        	"quantity":10,
+        	"sourceStoreId":"3762c211-2e48-4119-bdbb-0cd162620d79",
+        	"targetStoreId":"6766410d-6703-4562-b8a5-e2aad2971b71"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.3.0
+    authentication: {}
+    metaSortKey: -1737643971425
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_69e9764efd9741989fb73f6886c4c067
+    parentId: wrk_87fc0adf23054e548916e9a0fc78656a
+    modified: 1738663003685
+    created: 1737632011473
+    name: Inventory
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1737632011473
+    environmentType: kv
+    _type: request_group
+  - _id: req_595757641fdf41a1b47afe00425f62e9
+    parentId: fld_69e9764efd9741989fb73f6886c4c067
+    modified: 1738662929048
+    created: 1737602694657
+    url: "{{ _.url }}/inventory"
+    name: create-inventory
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        "minStock":12,
+        "productId":"01-Product-Testing",
+        "quantity":200,
+        "storeId":"01-Store-Testing"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.3.0
+    authentication: {}
+    metaSortKey: -1737643971325
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d694758140854d66aaad8ffe1cfcd894
+    parentId: fld_69e9764efd9741989fb73f6886c4c067
+    modified: 1738662936701
+    created: 1737632014498
+    url: "{{ _.url }}/store/01-Store-Testing/inventory?page=1&pageSize=10"
+    name: all-Inventory
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/10.3.0
+    authentication: {}
+    metaSortKey: -1737643971225
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5f220a78b7b24142a02b17d8d616e46d
+    parentId: fld_69e9764efd9741989fb73f6886c4c067
+    modified: 1738662942839
+    created: 1737635691615
+    url: "{{ _.url }}/inventory/alerts"
+    name: alet-Inventory
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/10.3.0
+    authentication: {}
+    metaSortKey: -1737643971125
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5276a7706c35412c93a50c95eb7d666d
+    parentId: fld_fc0b04a1cb81407187c4e17f9fc3365e
+    modified: 1738662978255
+    created: 1737541213360
+    url: "{{ _.url }}/products?page=1&pageSize=10&&minPrice=0&maxPrice=10000"
+    name: all-product
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/10.3.0
+    authentication: {}
+    metaSortKey: -1737624992040
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_fc0b04a1cb81407187c4e17f9fc3365e
+    parentId: wrk_87fc0adf23054e548916e9a0fc78656a
+    modified: 1737624982405
+    created: 1737624982405
+    name: Products
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1737624982405
+    environmentType: kv
+    _type: request_group
+  - _id: req_0a496bcbbe8746ba8f1053b2823060cf
+    parentId: fld_fc0b04a1cb81407187c4e17f9fc3365e
+    modified: 1738662980672
+    created: 1737539379110
+    url: "{{ _.url }}/product"
+    name: create-product
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        "name":"a",
+        "overview":"se acoloca en el pelo",
+        "category":"saaaas",
+        "price":2.5,
+        "sku":"asdsdd"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.3.0
+    authentication: {}
+    metaSortKey: -1737624991990
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_db86ef56a44541cbad7d2f9bd0cdf1ab
+    parentId: fld_fc0b04a1cb81407187c4e17f9fc3365e
+    modified: 1738662981799
+    created: 1737607443874
+    url: "{{ _.url }}/product/01-Product-Testing"
+    name: update-product
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |
+        {
+        	"name":"saasas",
+        	"category":"s",
+        	"price":12.33,
+        	"overview":"se coloca en el pelo",
+        	"sku":"A"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.3.0
+    authentication: {}
+    metaSortKey: -1737624991940
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_f0d5c5074aab407884d441363274a483
+    parentId: fld_fc0b04a1cb81407187c4e17f9fc3365e
+    modified: 1738662982940
+    created: 1737611805224
+    url: "{{ _.url }}/product/b80ff36-3fd0-4777-a127-17c0e076bba8"
+    name: delete- product
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/10.3.0
+    authentication: {}
+    metaSortKey: -1737624991840
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_fa31362e4cfd419aaac77aa14bb65ddd
+    parentId: fld_fc0b04a1cb81407187c4e17f9fc3365e
+    modified: 1738662984909
+    created: 1737612929440
+    url: "{{ _.url }}/product/091603a9-ec76-442f-abe8-b1368718d4d0"
+    name: one-product
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/10.3.0
+    authentication: {}
+    metaSortKey: -1737624991740
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_e00793e79f091379b006ba9be9ff402787d5bef6
+    parentId: wrk_87fc0adf23054e548916e9a0fc78656a
+    modified: 1738662905031
+    created: 1737539353302
+    name: Base Environment
+    data:
+      url: http://localhost:3000/api
+    dataPropertyOrder:
+      "&":
+        - url
+    color: null
+    isPrivate: false
+    metaSortKey: 1737539353302
+    environmentType: json
+    kvPairData: []
+    _type: environment
+  - _id: jar_e00793e79f091379b006ba9be9ff402787d5bef6
+    parentId: wrk_87fc0adf23054e548916e9a0fc78656a
+    modified: 1737539353305
+    created: 1737539353305
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
