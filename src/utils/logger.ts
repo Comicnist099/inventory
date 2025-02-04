@@ -3,7 +3,7 @@ import path from "path";
 import winston from "winston";
 
 
-const logsDir = path.join(__dirname, "../../logs"); 
+const logsDir = path.join(__dirname, "../../../logs"); 
 if (!fs.existsSync(logsDir)) {
   fs.mkdirSync(logsDir, { recursive: true });
 }

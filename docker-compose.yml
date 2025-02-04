@@ -12,7 +12,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./backups:/backups  # ✅ Se monta una carpeta local para guardar los backups
+      - ./backups:/backups  
 
   app:
     build:
@@ -28,6 +28,8 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+      - ./logs:/app/logs  
+
 
   test:
     build:
