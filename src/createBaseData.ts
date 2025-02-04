@@ -5,6 +5,11 @@ const prisma = new PrismaClient();
 async function createBaseData(): Promise<void> {
   try {
     await prisma.$transaction(async (tx) => {
+      // Eliminar datos previos en orden de dependencias
+      await tx.inventory.deleteMany({});
+      await tx.product.deleteMany({});
+      await tx.store.deleteMany({});
+
       const stores = [
         { id: "01-Store-Testing", name: "Store 1", active: true },
         { id: "02-Store-Testing", name: "Store 2", active: true },

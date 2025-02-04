@@ -12,6 +12,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./backups:/backups  # ✅ Se monta una carpeta local para guardar los backups
 
   app:
     build:
@@ -27,6 +28,7 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+
   test:
     build:
       context: .
@@ -37,12 +39,29 @@ services:
     depends_on:
       - db
     entrypoint: ["tail", "-f", "/dev/null"]  
-
-    
-
-
+  
+  backup:
+    image: postgres:13-alpine
+    container_name: inventorysystem-backup
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - ./backups:/backups
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        while true; do
+          echo "Creando backup..."
+          PGPASSWORD=${POSTGRES_PASSWORD} pg_dump -U ${POSTGRES_USER} -h db -d ${POSTGRES_DB} > /backups/snapshot_$(date +\%F).sql
+          find /backups -type f -mtime +3 -name "snapshot_*.sql" -exec rm {} \;
+          echo "Backup completado."
+          sleep 86400
+        done
+  
 volumes:
   postgres_data:
     driver: local
-
-  
